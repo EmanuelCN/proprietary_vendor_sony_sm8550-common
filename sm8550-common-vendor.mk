@@ -34,6 +34,7 @@ PRODUCT_COPY_FILES += \
     vendor/sony/sm8550-common/proprietary/system_ext/etc/seccomp_policy/wfdservice64.policy:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/seccomp_policy/wfdservice64.policy \
     vendor/sony/sm8550-common/proprietary/system_ext/etc/sysconfig/qti_telephony_system_packages_config.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/qti_telephony_system_packages_config.xml \
     vendor/sony/sm8550-common/proprietary/system_ext/etc/sysconfig/qti_whitelist_system_ext.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/qti_whitelist_system_ext.xml \
+    vendor/sony/sm8550-common/proprietary/system_ext/etc/wfdconfigsink.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/wfdconfigsink.xml \
     vendor/sony/sm8550-common/proprietary/vendor/etc/acdbdata/IDP_UPD/IDP_UPD_acdb_cal.acdb:$(TARGET_COPY_OUT_VENDOR)/etc/acdbdata/IDP_UPD/IDP_UPD_acdb_cal.acdb \
     vendor/sony/sm8550-common/proprietary/vendor/etc/acdbdata/IDP_UPD/IDP_UPD_workspaceFileXml.qwsp:$(TARGET_COPY_OUT_VENDOR)/etc/acdbdata/IDP_UPD/IDP_UPD_workspaceFileXml.qwsp \
     vendor/sony/sm8550-common/proprietary/vendor/etc/acdbdata/ffv_models/ffv__5.0.1_0.1__3.0.0_0.0__eai_2.10_enpu3.pmd:$(TARGET_COPY_OUT_VENDOR)/etc/acdbdata/ffv_models/ffv__5.0.1_0.1__3.0.0_0.0__eai_2.10_enpu3.pmd \
@@ -225,7 +226,6 @@ PRODUCT_COPY_FILES += \
     vendor/sony/sm8550-common/proprietary/vendor/etc/permissions/vendor.qti.hardware.factory.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/vendor.qti.hardware.factory.xml \
     vendor/sony/sm8550-common/proprietary/vendor/etc/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt \
     vendor/sony/sm8550-common/proprietary/vendor/etc/qconfigpresets.json:$(TARGET_COPY_OUT_VENDOR)/etc/qconfigpresets.json \
-    vendor/sony/sm8550-common/proprietary/vendor/etc/qcril_database/qcrilNr.db:$(TARGET_COPY_OUT_VENDOR)/etc/qcril_database/qcrilNr.db \
     vendor/sony/sm8550-common/proprietary/vendor/etc/qcril_database/upgrade/config/10.0_config.sql:$(TARGET_COPY_OUT_VENDOR)/etc/qcril_database/upgrade/config/10.0_config.sql \
     vendor/sony/sm8550-common/proprietary/vendor/etc/qcril_database/upgrade/config/11.0_config.sql:$(TARGET_COPY_OUT_VENDOR)/etc/qcril_database/upgrade/config/11.0_config.sql \
     vendor/sony/sm8550-common/proprietary/vendor/etc/qcril_database/upgrade/config/12.0_config.sql:$(TARGET_COPY_OUT_VENDOR)/etc/qcril_database/upgrade/config/12.0_config.sql \
@@ -248,7 +248,6 @@ PRODUCT_COPY_FILES += \
     vendor/sony/sm8550-common/proprietary/vendor/etc/qcril_database/upgrade/other/9_version_update_ecc_table.sql:$(TARGET_COPY_OUT_VENDOR)/etc/qcril_database/upgrade/other/9_version_update_ecc_table.sql \
     vendor/sony/sm8550-common/proprietary/vendor/etc/sap.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sap.conf \
     vendor/sony/sm8550-common/proprietary/vendor/etc/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config \
-    vendor/sony/sm8550-common/proprietary/vendor/etc/seccomp_policy/atfwd@2.0.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/atfwd@2.0.policy \
     vendor/sony/sm8550-common/proprietary/vendor/etc/seccomp_policy/codec2.vendor.base-arm64.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/codec2.vendor.base-arm64.policy \
     vendor/sony/sm8550-common/proprietary/vendor/etc/seccomp_policy/codec2.vendor.ext-arm64.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/codec2.vendor.ext-arm64.policy \
     vendor/sony/sm8550-common/proprietary/vendor/etc/seccomp_policy/gnss@2.0-base.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/gnss@2.0-base.policy \
@@ -458,19 +457,12 @@ PRODUCT_PACKAGES += \
     libTrustedUITZ \
     libTrustedUIVM \
     lib_bix_idd \
-    lib_bt_aptx \
-    lib_bt_ble \
-    lib_bt_bundle \
     libadm \
     libadreno_utils \
     libadsp_default_listener \
     libadsprpc \
     libagm \
-    libar-acdb \
-    libar-gpr \
-    libar-gsl \
     libar-pal \
-    libats \
     libaudio_log_utils \
     libbacklight-calib \
     libbatching \
@@ -577,8 +569,6 @@ PRODUCT_PACKAGES += \
     liblowi_client \
     liblowi_wifihal \
     liblqe \
-    liblx-ar_util \
-    liblx-osal \
     libmasc \
     libmcs \
     libmdmdetect \
@@ -837,9 +827,6 @@ PRODUCT_PACKAGES += \
     vendor.qti.esepowermanager@1.1 \
     vendor.qti.gnss-V2-ndk \
     vendor.qti.gnss-service \
-    vendor.qti.hardware.AGMIPC@1.0-impl \
-    vendor.qti.hardware.ListenSoundModel@1.0-impl \
-    vendor.qti.hardware.ListenSoundModel@1.0 \
     vendor.qti.hardware.bluetooth_sar@1.0 \
     vendor.qti.hardware.bluetooth_sar@1.1 \
     vendor.qti.hardware.bttpi-V2-ndk \
@@ -888,8 +875,6 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.qteeconnector@1.0 \
     vendor.qti.hardware.radio.am-V1-ndk \
     vendor.qti.hardware.radio.am@1.0 \
-    vendor.qti.hardware.radio.atcmdfwd-V1-ndk \
-    vendor.qti.hardware.radio.atcmdfwd@1.0 \
     vendor.qti.hardware.radio.ims-V9-ndk \
     vendor.qti.hardware.radio.ims@1.0 \
     vendor.qti.hardware.radio.ims@1.1 \
@@ -982,87 +967,87 @@ PRODUCT_PACKAGES += \
     vendor.somc.hardware.security.secd@1.1 \
     vendor.somc.hardware.videoeffect-V1-impl \
     vendor.somc.hardware.videoeffect-V1-ndk_platform \
-    libQnnHtpV73Skel.cameraqnn \
-    bm3a68v08s11n29 \
-    bm3a68v08s11n30 \
-    bm3a68v08s11n35 \
-    bm3a68v08s11n36 \
-    bm3a68v08s11n37 \
-    bm3a68v08s11n38 \
-    bm3a68v08s11n39 \
-    bm3a68v08s11n40 \
-    bm3a68v08s11n46 \
-    bm3a68v08s11n47 \
-    bm3a68v08s11n48 \
-    bm3a68v08s11n49 \
-    bm3a68v08s11n52 \
-    bm3a68v08s11n53 \
-    bm3a73v08s11n02 \
-    bm3a73v08s11n03 \
-    bm3a73v08s11n04 \
-    bm3a73v08s11n06 \
-    bm3a73v08s11n07 \
-    bm3a73v08s11n08 \
-    bm3a73v08s11n09 \
-    bm3a73v08s11n12 \
-    bm3a73v08s11n13 \
-    bm3a73v08s11n14 \
-    bm3a73v08s11n15 \
-    bm3a73v08s11n16 \
-    bm3a73v08s11n17 \
-    bm3a73v08s11n18 \
-    bm3a73v08s11n19 \
-    bm3a73v08s11n20 \
-    bm3a73v08s11n21 \
-    bm3a73v08s11n22 \
-    bm3a73v08s11n23 \
-    bm3a73v08s11n24 \
-    bm3a73v08s11n25 \
-    bm3a73v08s11n26 \
-    bm3a73v08s11n27 \
-    bm3a73v08s11n28 \
-    bm3a73v08s11n41 \
-    bm3a73v08s11n42 \
-    bm3a73v08s11n43 \
-    bm3a73v08s11n44 \
-    bm3a73v08s11n45 \
-    bm3a73v08s11n50 \
-    bm3a73v08s11n51 \
-    libDspIOProxy_skel \
-    libQnnHtpV73Skel.asdp \
-    libSnpeHtpV73Skel \
-    libVppAisQnnHtp \
-    libVppFrcQnnHtp \
-    libadsp_jpege_skel \
-    libapn_dsp_skel \
-    libbitml_nsp_skel \
-    libbitml_nsp_v2_skel \
-    libdsp_streamer_binning \
-    libdsp_streamer_qvrcam_receiver \
-    libevadsp_3_0 \
-    libeye_tracking_dsp_sample_skel \
-    libhalide_hexagon_remote_skel \
-    libhdr_skel \
-    libmctfengine_skel \
-    libmobilenet_dsp_frc \
-    libmobilenet_dsp_frc_networks \
-    libmorpho_defocus_face_bokeh_skel \
-    libqvr_3dof_tracker_skel \
-    libqvr_cam_dsp_driver_skel \
-    libqvr_dsp_driver_skel \
-    libsomc_alfortlpserv_skel \
-    libsomc_cornfrosty_skel \
-    libsomc_donutscmnserv_skel \
-    libsomc_oshirukoserv_skel \
-    libsomc_pdnserv_skel \
-    libtracker_6dof_skel_8450 \
-    libvpp_ais \
-    libvpp_ais_networks \
-    libvpp_frc \
-    libvpp_svc_skel \
-    libvpp_vqa_networks \
-    libvpt_action_recognition \
-    libworker_pool \
+    vendor_lib_rfsa_adsp_Camera_QNN_libQnnHtpV73Skel_so \
+    vendor_lib_rfsa_adsp_bm3a68v08s11n29_bin \
+    vendor_lib_rfsa_adsp_bm3a68v08s11n30_bin \
+    vendor_lib_rfsa_adsp_bm3a68v08s11n35_bin \
+    vendor_lib_rfsa_adsp_bm3a68v08s11n36_bin \
+    vendor_lib_rfsa_adsp_bm3a68v08s11n37_bin \
+    vendor_lib_rfsa_adsp_bm3a68v08s11n38_bin \
+    vendor_lib_rfsa_adsp_bm3a68v08s11n39_bin \
+    vendor_lib_rfsa_adsp_bm3a68v08s11n40_bin \
+    vendor_lib_rfsa_adsp_bm3a68v08s11n46_bin \
+    vendor_lib_rfsa_adsp_bm3a68v08s11n47_bin \
+    vendor_lib_rfsa_adsp_bm3a68v08s11n48_bin \
+    vendor_lib_rfsa_adsp_bm3a68v08s11n49_bin \
+    vendor_lib_rfsa_adsp_bm3a68v08s11n52_bin \
+    vendor_lib_rfsa_adsp_bm3a68v08s11n53_bin \
+    vendor_lib_rfsa_adsp_bm3a73v08s11n02_bin \
+    vendor_lib_rfsa_adsp_bm3a73v08s11n03_bin \
+    vendor_lib_rfsa_adsp_bm3a73v08s11n04_bin \
+    vendor_lib_rfsa_adsp_bm3a73v08s11n06_bin \
+    vendor_lib_rfsa_adsp_bm3a73v08s11n07_bin \
+    vendor_lib_rfsa_adsp_bm3a73v08s11n08_bin \
+    vendor_lib_rfsa_adsp_bm3a73v08s11n09_bin \
+    vendor_lib_rfsa_adsp_bm3a73v08s11n12_bin \
+    vendor_lib_rfsa_adsp_bm3a73v08s11n13_bin \
+    vendor_lib_rfsa_adsp_bm3a73v08s11n14_bin \
+    vendor_lib_rfsa_adsp_bm3a73v08s11n15_bin \
+    vendor_lib_rfsa_adsp_bm3a73v08s11n16_bin \
+    vendor_lib_rfsa_adsp_bm3a73v08s11n17_bin \
+    vendor_lib_rfsa_adsp_bm3a73v08s11n18_bin \
+    vendor_lib_rfsa_adsp_bm3a73v08s11n19_bin \
+    vendor_lib_rfsa_adsp_bm3a73v08s11n20_bin \
+    vendor_lib_rfsa_adsp_bm3a73v08s11n21_bin \
+    vendor_lib_rfsa_adsp_bm3a73v08s11n22_bin \
+    vendor_lib_rfsa_adsp_bm3a73v08s11n23_bin \
+    vendor_lib_rfsa_adsp_bm3a73v08s11n24_bin \
+    vendor_lib_rfsa_adsp_bm3a73v08s11n25_bin \
+    vendor_lib_rfsa_adsp_bm3a73v08s11n26_bin \
+    vendor_lib_rfsa_adsp_bm3a73v08s11n27_bin \
+    vendor_lib_rfsa_adsp_bm3a73v08s11n28_bin \
+    vendor_lib_rfsa_adsp_bm3a73v08s11n41_bin \
+    vendor_lib_rfsa_adsp_bm3a73v08s11n42_bin \
+    vendor_lib_rfsa_adsp_bm3a73v08s11n43_bin \
+    vendor_lib_rfsa_adsp_bm3a73v08s11n44_bin \
+    vendor_lib_rfsa_adsp_bm3a73v08s11n45_bin \
+    vendor_lib_rfsa_adsp_bm3a73v08s11n50_bin \
+    vendor_lib_rfsa_adsp_bm3a73v08s11n51_bin \
+    vendor_lib_rfsa_adsp_libDspIOProxy_skel_so \
+    vendor_lib_rfsa_adsp_libQnnHtpV73Skel_so \
+    vendor_lib_rfsa_adsp_libSnpeHtpV73Skel_so \
+    vendor_lib_rfsa_adsp_libVppAisQnnHtp_so \
+    vendor_lib_rfsa_adsp_libVppFrcQnnHtp_so \
+    vendor_lib_rfsa_adsp_libadsp_jpege_skel_so \
+    vendor_lib_rfsa_adsp_libapn_dsp_skel_so \
+    vendor_lib_rfsa_adsp_libbitml_nsp_skel_so \
+    vendor_lib_rfsa_adsp_libbitml_nsp_v2_skel_so \
+    vendor_lib_rfsa_adsp_libdsp_streamer_binning_so \
+    vendor_lib_rfsa_adsp_libdsp_streamer_qvrcam_receiver_so \
+    vendor_lib_rfsa_adsp_libevadsp_3_0_so \
+    vendor_lib_rfsa_adsp_libeye_tracking_dsp_sample_skel_so \
+    vendor_lib_rfsa_adsp_libhalide_hexagon_remote_skel_so \
+    vendor_lib_rfsa_adsp_libhdr_skel_so \
+    vendor_lib_rfsa_adsp_libmctfengine_skel_so \
+    vendor_lib_rfsa_adsp_libmobilenet_dsp_frc_so \
+    vendor_lib_rfsa_adsp_libmobilenet_dsp_frc_networks_so \
+    vendor_lib_rfsa_adsp_libmorpho_defocus_face_bokeh_skel_so \
+    vendor_lib_rfsa_adsp_libqvr_3dof_tracker_skel_so \
+    vendor_lib_rfsa_adsp_libqvr_cam_dsp_driver_skel_so \
+    vendor_lib_rfsa_adsp_libqvr_dsp_driver_skel_so \
+    vendor_lib_rfsa_adsp_libsomc_alfortlpserv_skel_so \
+    vendor_lib_rfsa_adsp_libsomc_cornfrosty_skel_so \
+    vendor_lib_rfsa_adsp_libsomc_donutscmnserv_skel_so \
+    vendor_lib_rfsa_adsp_libsomc_oshirukoserv_skel_so \
+    vendor_lib_rfsa_adsp_libsomc_pdnserv_skel_so \
+    vendor_lib_rfsa_adsp_libtracker_6dof_skel_8450_so \
+    vendor_lib_rfsa_adsp_libvpp_ais_so \
+    vendor_lib_rfsa_adsp_libvpp_ais_networks_so \
+    vendor_lib_rfsa_adsp_libvpp_frc_so \
+    vendor_lib_rfsa_adsp_libvpp_svc_skel_so \
+    vendor_lib_rfsa_adsp_libvpp_vqa_networks_so \
+    vendor_lib_rfsa_adsp_libvpt_action_recognition_so \
+    vendor_lib_rfsa_adsp_libworker_pool_so \
     com.qualcomm.qti.ant@1.0 \
     com.qualcomm.qti.dpm.api@1.0 \
     com.quicinc.cne.api@1.0 \
@@ -1127,6 +1112,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.qccsyshal@1.2 \
     vendor.qti.hardware.qccvndhal@1.0 \
     vendor.qti.hardware.wifidisplaysession@1.0 \
+    vendor.qti.hardware.wifidisplaysession_aidl-V1-ndk \
     vendor.qti.imsrtpservice@3.0 \
     vendor.qti.imsrtpservice@3.1 \
     vendor.qti.qccvndhal_aidl-V1-ndk \
@@ -1208,7 +1194,6 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.wifidisplaysession-service.xml \
     vendor.semc.hardware.extlight-somc.xml \
     vendor.somc.hardware.videoeffect.xml \
-    ATFWD-daemon \
     adpl \
     adsprpcd \
     cdsprpcd \
@@ -1323,3 +1308,6 @@ PRODUCT_PACKAGES += \
     vendor_lib64_libEGL_adreno_so \
     vendor_lib64_libGLESv2_adreno_so \
     vendor_lib64_libq3dtools_adreno_so
+
+PRODUCT_BOOT_JARS += \
+    WfdCommon
