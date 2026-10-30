@@ -362,11 +362,7 @@ PRODUCT_COPY_FILES += \
     vendor/sony/sm8550-common/proprietary/vendor/firmware/egisap.mbn:$(TARGET_COPY_OUT_VENDOR)/firmware/egisap.mbn \
     vendor/sony/sm8550-common/proprietary/vendor/firmware/tzsecuredata.mbn:$(TARGET_COPY_OUT_VENDOR)/firmware/tzsecuredata.mbn \
     vendor/sony/sm8550-common/proprietary/vendor/firmware/tzsuntory.mbn:$(TARGET_COPY_OUT_VENDOR)/firmware/tzsuntory.mbn \
-    vendor/sony/sm8550-common/proprietary/vendor/firmware/tztpm.mbn:$(TARGET_COPY_OUT_VENDOR)/firmware/tztpm.mbn \
-    vendor/sony/sm8550-common/proprietary/vendor/gpu/kbc/sequence_manifest.bin:$(TARGET_COPY_OUT_VENDOR)/gpu/kbc/sequence_manifest.bin \
-    vendor/sony/sm8550-common/proprietary/vendor/gpu/kbc/unified_kbcs_32.bin:$(TARGET_COPY_OUT_VENDOR)/gpu/kbc/unified_kbcs_32.bin \
-    vendor/sony/sm8550-common/proprietary/vendor/gpu/kbc/unified_kbcs_64.bin:$(TARGET_COPY_OUT_VENDOR)/gpu/kbc/unified_kbcs_64.bin \
-    vendor/sony/sm8550-common/proprietary/vendor/gpu/kbc/unified_ksqs.bin:$(TARGET_COPY_OUT_VENDOR)/gpu/kbc/unified_ksqs.bin
+    vendor/sony/sm8550-common/proprietary/vendor/firmware/tztpm.mbn:$(TARGET_COPY_OUT_VENDOR)/firmware/tztpm.mbn
 
 PRODUCT_PACKAGES += \
     vendor.qti.diaghal-V1-ndk \
@@ -382,13 +378,6 @@ PRODUCT_PACKAGES += \
     com.qualcomm.qti.uceservice@2.2 \
     com.qualcomm.qti.uceservice@2.3 \
     deviceInfoServiceModuleNr \
-    eglSubDriverAndroid \
-    libEGL_adreno \
-    libGLESv1_CM_adreno \
-    libGLESv2_adreno \
-    libVkLayer_ADRENO_qprofiler \
-    libq3dtools_adreno \
-    libq3dtools_esx \
     android.hardware.bluetooth.audio-impl-qti \
     android.hardware.bluetooth@1.0-impl-qti \
     android.hardware.bluetooth@1.1-impl-qti \
@@ -408,7 +397,6 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.qseecom@1.0-impl \
     vendor.qti.hardware.sensorscalibrate@1.0-impl \
     vendor.qti.hardware.soter@1.0-impl \
-    vulkan.adreno \
     jcos_nq_client \
     lib-imscommon \
     lib-imsdpl \
@@ -423,7 +411,6 @@ PRODUCT_PACKAGES += \
     lib-rtpsl \
     libAlacSwDec \
     libApeSwDec \
-    libCB \
     libCOSNet_spatial_qnn_quantized \
     libEvrcSwCodec \
     libFileMux_proprietary \
@@ -434,7 +421,6 @@ PRODUCT_PACKAGES += \
     libGPreqcancel \
     libGPreqcancel_svc \
     libMiscTaWrapper \
-    libOpenCL \
     libPeripheralStateUtils \
     libQSEEComAPI \
     libQTEEConnector_vendor \
@@ -457,7 +443,6 @@ PRODUCT_PACKAGES += \
     libTrustedUIVM \
     lib_bix_idd \
     libadm \
-    libadreno_utils \
     libadsp_default_listener \
     libadsprpc \
     libagm \
@@ -525,8 +510,6 @@ PRODUCT_PACKAGES += \
     libgnsspps \
     libgps.utils \
     libgpt \
-    libgpudataproducer \
-    libgsl \
     libhdcpsrm \
     libhdr_backlight_adapter \
     libhdr_tm \
@@ -538,17 +521,12 @@ PRODUCT_PACKAGES += \
     libizat_client_api \
     libizat_core \
     libjnihelper \
-    libkcl \
-    libkernelmanager \
     libkeymasterdeviceutils \
     libkeymasterprovision \
     libkeymasterutils \
     liblbs_core \
     liblights-core \
     liblistensoundmodel2vendor \
-    libllvm-glnext \
-    libllvm-qcom \
-    libllvm-qgl \
     libloadalgo_stub \
     libloc_api_v02 \
     libloc_api_wds \
@@ -1302,10 +1280,7 @@ PRODUCT_PACKAGES += \
     taimport_vendor
 
 PRODUCT_PACKAGES += \
-    system_ext_priv-app_WfdService_lib_arm64_libwfdnative_so \
-    vendor_lib64_libEGL_adreno_so \
-    vendor_lib64_libGLESv2_adreno_so \
-    vendor_lib64_libq3dtools_adreno_so
+    system_ext_priv-app_WfdService_lib_arm64_libwfdnative_so
 
 PRODUCT_BOOT_JARS += \
     WfdCommon
